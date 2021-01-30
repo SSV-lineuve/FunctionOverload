@@ -13,12 +13,8 @@ void FillRand(int arr[ROWS][COLS], const int m, const int n);
 void FillRand(double arr[ROWS][COLS], const int m, const int n);
 void FillRand(char arr[ROWS][COLS], const int m, const int n);
 
-void Print(int arr[], const int n);
-void Print(double arr[], const int n);
-void Print(char arr[], const int n);
-void Print(int arr[ROWS][COLS], const int m, const int n);
-void Print(double arr[ROWS][COLS], const int m, const int n);
-void Print(char arr[ROWS][COLS], const int m, const int n);
+template<typename T>void Print(T arr[], const int n);
+template<typename T>void Print(T arr[ROWS][COLS], const int m, const int n);
 
 void Sort(int arr[], const int n);
 void Sort(double arr[], const int n);
@@ -27,12 +23,8 @@ void Sort(int arr[ROWS][COLS], const int m, const int n);
 void Sort(double arr[ROWS][COLS], const int m, const int n);
 void Sort(char arr[ROWS][COLS], const int m, const int n);
 
-int Sum(int arr[], const int n);
-double Sum(double arr[], const int n);
-int Sum(char arr[], const int n);
-int Sum(int arr[ROWS][COLS], const int m, const int n);
-double Sum(double arr[ROWS][COLS], const int m, const int n);
-int Sum(char arr[ROWS][COLS], const int m, const int n);
+template<typename T>T Sum(T arr[], const int n);
+template<typename T>T Sum(T arr[ROWS][COLS], const int m, const int n);
 
 double Avg(int arr[], const int n);
 double Avg(double arr[], const int n);
@@ -207,27 +199,13 @@ void FillRand(char arr[ROWS][COLS], const int m, const int n)
         }
     }
 }
-void Print(int arr[], const int n)
+template<typename T>void Print(T arr[], const int n)
 {    
     for (int i = 0; i < n; ++i)
     cout << arr[i] << "\t";
     cout << endl;
 }
-void Print(double arr[], const int n)
-{
-
-    for (int i = 0; i < n; ++i)
-    cout << arr[i] << "\t";
-    cout << endl;
-}
-
-void Print(char arr[], const int n)
-{
-    for (int i = 0; i < n; ++i)
-    cout << arr[i] << "\t";
-    cout << endl;    
-}
-void Print(int arr[ROWS][COLS], const int m, const int n)
+template<typename T>void Print(T arr[ROWS][COLS], const int m, const int n)
 {
     for (int i = 0; i < m; ++i)
     {
@@ -400,49 +378,15 @@ void Sort(char arr[ROWS][COLS], const int m, const int n)
         }
     }
 }
-int Sum(int arr[], const int n)
+template<typename T>T Sum(T arr[], const int n)
 {
-    int sum = 0;
+    T sum = 0;
     for (int i = 0; i < n; ++i)
     sum += arr[i];
     return sum;
 }
 
-double Sum(double arr[], const int n)
-{
-    double sum = 0;
-    for (int i = 0; i < n; ++i)
-    sum += arr[i];
-    return sum;
-}
-int Sum(char arr[], const int n)
-{
-    int sum = 0;
-    for (int i = 0; i < n; ++i)
-    sum += arr[i];
-    return sum;
-}
-int Sum(int arr[ROWS][COLS], const int m, const int n)
-{
-    int sum = 0;
-    for (int i = 0; i < m; ++i)
-    {
-        for (int j = 0; j < n; ++j)
-        sum += arr[i][j];
-    }
-    return sum;
-}
-double Sum(double arr[ROWS][COLS], const int m, const int n)
-{
-    double sum = 0;
-    for (int i = 0; i < m; ++i)
-    {
-        for (int j = 0; j < n; ++j)
-        sum += arr[i][j];
-    }
-    return sum;
-}
-int Sum(char arr[ROWS][COLS], const int m, const int n)
+template<typename T>T  Sum(T arr[ROWS][COLS], const int m, const int n)
 {
     int sum = 0;
     for (int i = 0; i < m; ++i)
