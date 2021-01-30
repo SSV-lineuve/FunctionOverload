@@ -1,4 +1,4 @@
-#include "Function.h"
+ï»¿#include "Function.h"
 
 void FillRand(int arr[], const int n)
 {
@@ -17,8 +17,8 @@ void FillRand(char arr[], const int n)
 {
     for (int i = 0; i < n; ++i)
     {
-        int minElem = 65; //ASCII êîä áóêâû A (91: [, 92: \, 93: ], 94: ^, 95: _, 96: ')
-        int maxElem = 122; //ASCII êîä áóêâû z (97-122)
+        int minElem = 65; //ASCII ÐºÐ¾Ð´ Ð±ÑƒÐºÐ²Ñ‹ A (91: [, 92: \, 93: ], 94: ^, 95: _, 96: ')
+        int maxElem = 122; //ASCII ÐºÐ¾Ð´ Ð±ÑƒÐºÐ²Ñ‹ z (97-122)
         arr[i] = rand() % (maxElem - minElem) + minElem;
     }
 }
@@ -48,8 +48,8 @@ void FillRand(char arr[ROWS][COLS], const int m, const int n)
     {
         for (int j = 0; j < n; ++j)
         {
-            int minElem = 65; //ASCII êîä áóêâû A (91: [, 92: \, 93: ], 94: ^, 95: _, 96: ')
-            int maxElem = 122; //ASCII êîä áóêâû z (97-122)
+            int minElem = 65; //ASCII ÐºÐ¾Ð´ Ð±ÑƒÐºÐ²Ñ‹ A (91: [, 92: \, 93: ], 94: ^, 95: _, 96: ')
+            int maxElem = 122; //ASCII ÐºÐ¾Ð´ Ð±ÑƒÐºÐ²Ñ‹ z (97-122)
             arr[i][j] = rand() % (maxElem - minElem) + minElem;
         }
     }
