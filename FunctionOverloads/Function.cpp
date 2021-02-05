@@ -1,6 +1,6 @@
 #include "Function.h"
 
-void Sort(int arr[], const int n)
+template<typename T>void Sort(T arr[], const int n)
 {
     for (int i = 0; i < n; ++i)
     {
@@ -8,7 +8,7 @@ void Sort(int arr[], const int n)
         {
             if (arr[j] < arr[i])
             {
-                int temp = arr[i];
+                T temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
             }
@@ -16,132 +16,27 @@ void Sort(int arr[], const int n)
     }
 }
 
-void Sort(double arr[], const int n)
+template<typename T>void Sort(T arr[ROWS][COLS], const int m, const int n)
 {
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = i + 1; j < n; ++j)
-        {
-            if (arr[j] < arr[i])
-            {
-                double temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-}
-
-void Sort(char arr[], const int n)
-{
-    for (int i = 0; i < n; ++i)
-    {
-        for (int j = i + 1; j < n; ++j)
-        {
-            if (arr[j] < arr[i])
-            {
-                char temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
-            }
-        }
-    }
-}
-void Sort(int arr[ROWS][COLS], const int m, const int n)
-{
-    for (int t = 0; t <= (m * n); ++t)
+    for (int t = 0; t < (m * n -1); ++t)
     {
         for (int i = 0; i < m; ++i)
         {
             for (int j = 0; j < (n - 1); ++j)
             {
+                if (i == m && j == n - 1) continue;
                 if (arr[i][j] > arr[i][j + 1])
                 {
-                    int temp = arr[i][j];
+                    T temp = arr[i][j];
                     arr[i][j] = arr[i][j + 1];
                     arr[i][j + 1] = temp;
                 }
             }
-        }
-
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < (m - 1); ++j)
-            {
-                if (arr[j][i] > arr[j][i + 1])
-                {
-                    int temp = arr[j][i];
-                    arr[j][i] = arr[j][i + 1];
-                    arr[j][i + 1] = temp;
-                }
-            }
-        }
+        }        
     }
 
 }
-void Sort(double arr[ROWS][COLS], const int m, const int n)
-{
-    for (int t = 0; t <= (m * n); ++t)
-    {
-        for (int i = 0; i < m; ++i)
-        {
-            for (int j = 0; j < (n - 1); ++j)
-            {
-                if (arr[i][j] > arr[i][j + 1])
-                {
-                    double temp = arr[i][j];
-                    arr[i][j] = arr[i][j + 1];
-                    arr[i][j + 1] = temp;
-                }
-            }
-        }
 
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < (m - 1); ++j)
-            {
-                if (arr[j][i] > arr[j][i + 1])
-                {
-                    double temp = arr[j][i];
-                    arr[j][i] = arr[j][i + 1];
-                    arr[j][i + 1] = temp;
-                }
-            }
-        }
-    }
-
-}
-void Sort(char arr[ROWS][COLS], const int m, const int n)
-{
-    for (int t = 0; t <= (m * n); ++t)
-    {
-        for (int i = 0; i < m; ++i)
-        {
-            for (int j = 0; j < (n - 1); ++j)
-            {
-                if (arr[i][j] > arr[i][j + 1])
-                {
-                    char temp = arr[i][j];
-                    arr[i][j] = arr[i][j + 1];
-                    arr[i][j + 1] = temp;
-                }
-            }
-        }
-
-        for (int i = 0; i < n; ++i)
-        {
-            for (int j = 0; j < (m - 1); ++j)
-            {
-                if (arr[j][i] > arr[j][i + 1])
-                {
-                    char temp = arr[j][i];
-                    arr[j][i] = arr[j][i + 1];
-                    arr[j][i + 1] = temp;
-                }
-            }
-        }
-    }
-}
 template<typename T>T Sum(T arr[], const int n)
 {
     T sum = 0;
@@ -168,20 +63,20 @@ double Avg(int arr[], const int n)
 
 double Avg(double arr[], const int n)
 {
-    return Sum(arr, n) / n;
+    return (double)Sum(arr, n) / n;
 }
-
 double Avg(char arr[], const int n)
 {
     return (double)Sum(arr, n) / n;
 }
+
 double Avg(int arr[ROWS][COLS], const int m, const int n)
 {
     return (double)Sum(arr, m, n) / (m * n);
 }
 double Avg(double arr[ROWS][COLS], const int m, const int n)
 {
-    return Sum(arr, m, n) / (m * n);
+    return (double)Sum(arr, m, n) / (m * n);
 }
 double Avg(char arr[ROWS][COLS], const int m, const int n)
 {
