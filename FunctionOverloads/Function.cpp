@@ -1,4 +1,4 @@
-#include "Function.h"
+ï»¿#include "Function.h"
 
 template<typename T>void Sort(T arr[], const int n)
 {
@@ -22,7 +22,7 @@ template<typename T>void Sort(T arr[ROWS][COLS], const int m, const int n)
     {
         for (int i = 0; i < m; ++i)
         {
-            for (int j = 0; j < n; ++j) //Åñëè íàïèñàòü n-1, òî êàæäàÿ ñòðîêà áóäåò ñîðòèðîâàòüñÿ îòäåëüíî
+            for (int j = 0; j < n; ++j) //Ð•ÑÐ»Ð¸ Ð½Ð°Ð¿Ð¸ÑÐ°Ñ‚ÑŒ n-1, Ñ‚Ð¾ ÐºÐ°Ð¶Ð´Ð°Ñ ÑÑ‚Ñ€Ð¾ÐºÐ° Ð±ÑƒÐ´ÐµÑ‚ ÑÐ¾Ñ€Ñ‚Ð¸Ñ€Ð¾Ð²Ð°Ñ‚ÑŒÑÑ Ð¾Ñ‚Ð´ÐµÐ»ÑŒÐ½Ð¾
             {
                 if (i == m - 1 && j == n - 1) break;
                 if (arr[i][j] > arr[i][j + 1])
