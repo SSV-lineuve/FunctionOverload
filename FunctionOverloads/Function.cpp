@@ -22,9 +22,9 @@ template<typename T>void Sort(T arr[ROWS][COLS], const int m, const int n)
     {
         for (int i = 0; i < m; ++i)
         {
-            for (int j = 0; j < (n - 1); ++j)
+            for (int j = 0; j < n; ++j) //Если написать n-1, то каждая строка будет сортироваться отдельно
             {
-                if (i == m && j == n - 1) continue;
+                if (i == m - 1 && j == n - 1) break;
                 if (arr[i][j] > arr[i][j + 1])
                 {
                     T temp = arr[i][j];
